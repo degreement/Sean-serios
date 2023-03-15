@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> No-es-virus_sea-serio.com </title>
+    <style>
+      .img
+      {
+        width: 1513.5px;
+        height: 613.5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Ingrese mi calificación:</h1>
+    <form>
+      <input type="number" id="calificacion" name="calificacion" required>
+      <button type="submit">Enviar</button>
+    </form> <br>
+    <div id="imagen"></div>
+
+    <script>
+      const form = document.querySelector('form');
+      const calificacionInput = document.getElementById('calificacion');
+      const imagenContainer = document.getElementById('imagen');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const calificacion = calificacionInput.value;
+
+        if (calificacion >= 70) {
+          // Mostrar imagen "mentiroso"
+          imagenContainer.innerHTML = '<img src="https://img.memegenerator.net/instances/80786723.jpg" class=img>'
+        } else {
+          // Mostrar imagen "entendible"
+          imagenContainer.innerHTML = '<img src="https://www.meme-arsenal.com/memes/d9c3dd00cc677272ba0a6994433b9402.jpg"class=img>'
+        }
+      });
+    </script>
+  </body>
+</html>
